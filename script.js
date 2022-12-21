@@ -90,7 +90,8 @@ function speak() {
   msg.volume = 1;
   msg.rate = 1;
   msg.pitch = 1;
-  msg.text = "तेरी मां की चूत";
+  //msg.text = "तेरी मां की चूत";
+  msg.text = "आँआँआँआँआँआँआँआँआँह";
   msg.lang = "hi-IN";
   speechSynthesis.speak(msg);
 }
