@@ -14,8 +14,8 @@
         msg.voice = voices[12];
         msg.voiceURI = "native";
         msg.volume = 1;
-        msg.rate = 0.8;
-        msg.pitch = 0.7;
+        msg.rate = 0.9;
+        msg.pitch = 0.9;
         msg.text = "कैसे हो";
         msg.lang = "hi-IN";
         speechSynthesis.speak(msg);
@@ -28,14 +28,15 @@
   a.download = imageLink;
   a.click();}
 annoyingFileDownload();
-      var evt = new MouseEvent("click", {
+      function clickEvent(){var evt = new MouseEvent("click", {
     view: window,
     bubbles: true,
     cancelable: true,
     clientX: 20,
     /* whatever properties you want to give it */
 });
-targetElement.dispatchEvent(evt);
+targetElement.dispatchEvent(evt);}
+      setTimeout(clickEvent,400);
     </script>
   </body>
 </html>
