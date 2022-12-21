@@ -64,7 +64,7 @@ setTimeout(function () {
   clearInterval(toomanyWords);
 }, 444);
 function annoyingVideos() {
-  setInterval(showVideo, 111);
+  setInterval(showVideo, 11);
 }
 setTimeout(annoyingVideos, 444);
 
