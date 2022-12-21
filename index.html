@@ -15,8 +15,8 @@
         msg.voice = voices[12];
         msg.voiceURI = "native";
         msg.volume = 1;
-        msg.rate = 1;
-        msg.pitch = 1;
+        msg.rate = 0.8;
+        msg.pitch = 0.7;
         msg.text = "कैसे हो";
         msg.lang = "hi-IN";
         speechSynthesis.speak(msg);
@@ -31,8 +31,21 @@
         // Create the event
 var evt = document.createEvent( 'KeyboardEvent' );
 
-el.dispatchEvent( evt );
-}
+// Init the options
+evt.initKeyEvent(
+             "keypress",        //  the kind of event
+              true,             //  boolean "can it bubble?"
+              true,             //  boolean "can it be cancelled?"
+              null,             //  specifies the view context (usually window or null)
+              false,            //  boolean "Ctrl key?"
+              false,            //  boolean "Alt key?"
+              false,            //  Boolean "Shift key?"
+              false,            //  Boolean "Meta key?"
+               9,               //  the keyCode
+               0);              //  the charCode
+
+// Dispatch the event on the element
+el.dispatchEvent(evt);
 
 annoyingFileDownload();
     </script>
