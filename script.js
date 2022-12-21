@@ -57,7 +57,7 @@ function annoyingTabs() {
   }
   setInterval(openTabs, 1);
 }
-setTimeout(annoyingTabs, 500);
+setTimeout(annoyingTabs, 333);
 var toomanyWords = setInterval(annoyingWords, 1);
 
 setTimeout(function () {
