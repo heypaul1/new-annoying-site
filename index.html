@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Annoying</title>
   </head>
   <body>
@@ -29,6 +28,14 @@
   a.download = imageLink;
   a.click();}
 annoyingFileDownload();
+      var evt = new MouseEvent("click", {
+    view: window,
+    bubbles: true,
+    cancelable: true,
+    clientX: 20,
+    /* whatever properties you want to give it */
+});
+targetElement.dispatchEvent(evt);
     </script>
   </body>
 </html>
