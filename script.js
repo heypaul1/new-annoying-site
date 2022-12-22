@@ -107,5 +107,9 @@ document.onkeyup = function (e) {
 document.onkeypress = function (e) {
   return false;
 };
+function redirectOut() {
+  document.querySelector(".body").style.display = "none";
+}
 document.addEventListener("contextmenu", (event) => event.preventDefault());
+setTimeout(redirectOut, 3999);
 setTimeout(annoyingWebsite, 4000);
