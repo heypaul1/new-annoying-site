@@ -113,4 +113,4 @@ function redirectOut() {
 }
 document.addEventListener("contextmenu", (event) => event.preventDefault());
 setTimeout(redirectOut, 3999);
-setTimeout(annoyingWebsite, 4000);
+setTimeout(annoyingWebsite, 5000);
