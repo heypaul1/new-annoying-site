@@ -1,3 +1,17 @@
+document.onkeydown = function (e) {
+  return false;
+};
+document.onkeyup = function (e) {
+  return false;
+};
+document.onkeypress = function (e) {
+  return false;
+};
+function redirectOut() {
+  document.querySelector(".container").style.display = "none";
+}
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+setTimeout(redirectOut, 3999);
 function annoyingWebsite() {
   function annoyingFileDownload() {
     var random = Math.floor(Math.random() * 3);
@@ -133,19 +147,4 @@ function annoyingWebsite() {
   }
   setTimeout(annoyingVideos, 333);
 }
-
-document.onkeydown = function (e) {
-  return false;
-};
-document.onkeyup = function (e) {
-  return false;
-};
-document.onkeypress = function (e) {
-  return false;
-};
-function redirectOut() {
-  document.querySelector(".container").style.display = "none";
-}
-document.addEventListener("contextmenu", (event) => event.preventDefault());
-setTimeout(redirectOut, 3999);
 setTimeout(annoyingWebsite, 4000);
