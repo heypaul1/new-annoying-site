@@ -22,6 +22,6 @@ jobs:
 
     - name: Expose Public URL
       id: localtunnel
-      run: lt --port 8080 --subdomain zed
+      run: lt --port 8080 --subdomain alexander
 
     
