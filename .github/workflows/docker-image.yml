@@ -1,0 +1,27 @@
+name: Build and Deploy Website
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Build Docker Image
+      run: docker build -t my-website-image .
+
+    - name: Start Docker Container
+      run: docker run -d -p 8080:80 my-website-image
+
+    - name: Install LocalTunnel
+      run: npm install -g localtunnel
+
+    - name: Expose Public URL
+      id: localtunnel
+      run: lt --port 8080 --subdomain kasm
+
+    
