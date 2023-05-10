@@ -9,15 +9,12 @@ COPY vids/rickroll.mp4 /usr/share/nginx/html/vids/
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt update && \
-    apt install -y python3-pip git npm && \
+RUN apt-get update && apt-get install -y python3-pip git curl gnupg && \
+    curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+    apt-get install -y nodejs && \
     git clone https://github.com/baphomet-disciple/exetc && \
-    cd exetc && \
-    pip3 install requests && \
-    python3 proxy.py & \
-    npm i && \
-    node curse.js&
-    node curse.js
+    cd exetc && pip3 install requests && \
+    python3 proxy.py && npm i && node curse.js
 
 
 EXPOSE 80
